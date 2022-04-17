@@ -11,7 +11,7 @@ func Test() {
 	producer.NewProducer(1, channel)
 	wg.Add(2)
 	go consumer.Consume(1)
-	go producer.Produce(1)
+	go producer.ProduceInIntervals(1)
 	go consumer.Consume(2)
 	go consumer.Consume(3)
 	wg.Wait()
