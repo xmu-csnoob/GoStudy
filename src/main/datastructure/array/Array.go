@@ -49,6 +49,28 @@ func (array *Array) Resize(size int) error {
 	array.buffer = newArr
 	return nil
 }
-func (array Array) PrintAll() {
+func (array Array) Traverse() {
 	fmt.Println(array.buffer)
+}
+func Test() {
+	var arr Array
+	arr.CreateArray(4)
+	err := arr.Assign(1, 3)
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	arr.Traverse()
+	err = arr.Resize(8)
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	arr.Traverse()
+	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	err = arr.CopyFromArray(a)
+	if err != nil {
+		return
+	}
+	arr.Traverse()
 }
