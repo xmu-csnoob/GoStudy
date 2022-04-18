@@ -9,7 +9,10 @@ type Son struct {
 
 func (son *Son) Eat(table table.Table) {
 	for {
-		f := <-table.AppleChan
-		println("Son Eats An Apple Weights ", f.Weight)
+		isEmpty := <-table.IsEmpty
+		if !isEmpty {
+			f := <-table.AppleChan
+			println("Son Eats An Apple Weights ", f.Weight)
+		}
 	}
 }

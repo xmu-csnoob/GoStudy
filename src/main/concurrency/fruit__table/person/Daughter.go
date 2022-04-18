@@ -9,7 +9,10 @@ type Daughter struct {
 
 func (daughter *Daughter) Eat(table table.Table) {
 	for {
-		f := <-table.OrangeChan
-		println("Daughter Eats An Orange Weights ", f.Weight)
+		isEmpty := <-table.IsEmpty
+		if !isEmpty {
+			f := <-table.OrangeChan
+			println("Daughter Eats An Orange Weights ", f.Weight)
+		}
 	}
 }

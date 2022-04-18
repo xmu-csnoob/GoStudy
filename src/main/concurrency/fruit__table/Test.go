@@ -13,7 +13,9 @@ func Test() {
 	var t table.Table
 	appleChannel := make(chan *fruit.Apple)
 	orangeChannel := make(chan *fruit.Orange)
-	t.NewTable(appleChannel, orangeChannel)
+	boolChannel := make(chan bool)
+	t.NewTable(appleChannel, orangeChannel, boolChannel)
+	t.IsEmpty <- true
 	go t.Produce()
 	var son person.Son
 	var daughter person.Daughter
