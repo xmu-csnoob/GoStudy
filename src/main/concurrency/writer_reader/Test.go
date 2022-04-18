@@ -13,8 +13,10 @@ func Test() {
 	writer.NewWriter(1, channel)
 	wg.Add(2)
 	go reader.Read(1)
-	go writer.Write(1)
 	go reader.Read(2)
 	go reader.Read(3)
+	go writer.Write(1)
+	go writer.Write(2)
+	go writer.Write(3)
 	wg.Wait()
 }
