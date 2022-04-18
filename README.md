@@ -8,7 +8,7 @@
 ## _Menu_
 ### _1.concurrency_
 在这个包里实现了若干多线程情景下的经典模型
-#### _①Producer-Consumer Model_
+#### _①Writer-Reader Model_
 #### _②Fruit-Table Model_
 ### _2.data structure_
 在这个包里实现了基础的几种数据结构以及相关算法
