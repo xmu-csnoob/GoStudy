@@ -9,11 +9,12 @@ _https://www.zhihu.com/column/c_1499382022623256576_
 ## _Menu_
 ### _1.concurrency_
 在这个包里实现了若干多线程情景下的经典模型
-#### _①Writer-Reader Model_
+#### _①Writer-Reader Model 读者/写者模型_
 _https://zhuanlan.zhihu.com/p/500510908_
-#### _②Producer-Consumer Model_
+#### _②Producer-Consumer Model 生产者/消费者模型_
 _https://zhuanlan.zhihu.com/p/500510908_
-#### _③Fruit-Table Model_
+#### _③Fruit-Table Model 吃水果模型_
+_https://zhuanlan.zhihu.com/p/500806167_
 ### _2.data structure_
 在这个包里实现了基础的几种数据结构以及相关算法
 #### _①Array_
