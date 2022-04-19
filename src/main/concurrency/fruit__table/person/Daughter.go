@@ -7,12 +7,10 @@ import (
 type Daughter struct {
 }
 
-func (daughter *Daughter) Eat(table table.Table) {
+func (daughter *Daughter) Eat(table *table.Table) {
 	for {
-		isEmpty := <-table.IsEmpty
-		if !isEmpty {
-			f := <-table.OrangeChan
-			println("Daughter Eats An Orange Weights ", f.Weight)
-		}
+		f := <-table.OrangeChan
+		println("Daughter Eats An Orange Weights ", f.Weight)
+		table.EmptyChan <- true
 	}
 }

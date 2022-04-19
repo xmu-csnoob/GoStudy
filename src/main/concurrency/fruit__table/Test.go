@@ -11,15 +11,15 @@ func Test() {
 	wg := sync.WaitGroup{}
 	wg.Add(3)
 	var t table.Table
-	appleChannel := make(chan *fruit.Apple)
-	orangeChannel := make(chan *fruit.Orange)
-	boolChannel := make(chan bool)
+	appleChannel := make(chan *fruit.Apple, 3)
+	orangeChannel := make(chan *fruit.Orange, 3)
+	boolChannel := make(chan bool, 1)
 	t.NewTable(appleChannel, orangeChannel, boolChannel)
-	t.IsEmpty <- true
-	go t.Produce()
+	t.EmptyChan <- true
 	var son person.Son
 	var daughter person.Daughter
-	go son.Eat(t)
-	go daughter.Eat(t)
+	go t.Produce(1)
+	go son.Eat(&t)
+	go daughter.Eat(&t)
 	wg.Wait()
 }
